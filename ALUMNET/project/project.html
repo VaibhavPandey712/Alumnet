@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALUMNET Projects</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+     <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler me-2 animate__animated animate__fadeIn" type="button"
+                data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand ms-auto logo-text animate__animated animate__fade" href="first.html" >ALUMNET</a>
+            <div class="profile-icon animate__animated animate__fadeIn">
+                <a href="../prof/ppl1.html">
+                    <img src="dp.webp" alt="Profile" class="rounded-circle">
+                </a>
+            </div>
+
+            <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">ALUMNET Menu</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active animate__animated animate__fadeInLeft" aria-current="page"
+                                href="first.html">
+                                <i class="fas fa-home me-2"></i>Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link animate__animated animate__fadeInLeft" href="../connect/connect.html">
+                                <i class="fas fa-users me-2"></i>Connect
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle animate__animated animate__fadeInLeft" href="#"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-th-list me-2"></i>Resources
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="../project/project.html">Projects</a></li>
+                                <li><a class="dropdown-item" href="../placement/placement.html">Placement Guide</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Messages</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex mt-3 search-form" role="search">
+                        <div class="input-group">
+                            <input class="form-control" type="search" id="searchInput" placeholder="Search"
+                                aria-label="Search">
+                            <button class="btn btn-success" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="project-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="animate__animated animate__fadeInDown">Project Showcase</h1>
+                    <p class="lead animate__animated animate__fadeInUp">Discover and share amazing projects built by our community</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Upload Section -->
+    <section class="upload-section" id="upload-section">
+        <div class="container">
+            <div class="upload-container" data-aos="fade-up">
+                <h2 class="text-center mb-4"><i class="fas fa-upload me-2"></i>Share Your Project</h2>
+                <form id="projectUploadForm">
+                    <div class="mb-3">
+                        <label for="projectTitle" class="form-label">Project Title</label>
+                        <input type="text" class="form-control" id="projectTitle" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="projectDescription" class="form-label">Project Description</label>
+                        <textarea class="form-control" id="projectDescription" rows="3" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="githubLink" class="form-label">GitHub Link</label>
+                        <input type="url" class="form-control" id="githubLink" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="projectImage" class="form-label">Project Image</label>
+                        <input type="file" class="form-control" id="projectImage" required accept="image/*">
+                    </div>
+                    <div class="mb-3">
+                        <label for="tags" class="form-label">Tags (comma separated)</label>
+                        <input type="text" class="form-control" id="tags" placeholder="web, mobile, ai, blockchain">
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane me-2"></i>Submit Project</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Gallery Section -->
+    <section class="projects-gallery">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up"><i class="fas fa-lightbulb me-2"></i>Featured Projects</h2>
+            
+            <!-- Filters -->
+            <div class="filter-container text-center mb-4" data-aos="fade-up">
+                <div class="btn-group filter-buttons">
+                    <button type="button" class="btn btn-outline-primary active" data-filter="all">All</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="web">Web</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="mobile">Mobile</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="ai">AI</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="blockchain">Blockchain</button>
+                </div>
+            </div>
+            
+            <!-- Search Projects -->
+            <div class="project-search mb-5" data-aos="fade-up">
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                    <input type="text" class="form-control" id="projectSearchInput" placeholder="Search projects...">
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="row" id="projectsGrid">
+                <!-- Project 1 -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="web" data-aos="fade-up">
+                    <div class="card project-card">
+                        <div class="project-image">
+                            <img src="monsoon.avif" class="card-img-top" alt="Project Image">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-light btn-sm view-project" data-id="1"><i class="fas fa-eye me-1"></i> View</a>
+                                <a href="https://github.com/ojasva-mishra/weather-app" target="_blank" class="btn btn-light btn-sm"><i class="fab fa-github me-1"></i> GitHub</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Weather Dashboard</h5>
+                            <p class="card-text">A responsive weather dashboard with real-time data visualization and forecasting.</p>
+                            <div class="project-meta">
+                                <span class="project-author"><i class="fas fa-user me-1"></i> Ojasva Mishra</span>
+                                <div class="project-tags">
+                                    <span class="badge bg-primary">Web</span>
+                                    <span class="badge bg-secondary">API</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="mobile" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card project-card">
+                        <div class="project-image">
+                            <img src="fit.avif" class="card-img-top" alt="Project Image">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-light btn-sm view-project" data-id="2"><i class="fas fa-eye me-1"></i> View</a>
+                                <a href="https://github.com/diya-maheshwari/fitness-tracker" target="_blank" class="btn btn-light btn-sm"><i class="fab fa-github me-1"></i> GitHub</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Fitness Tracker App</h5>
+                            <p class="card-text">Mobile application for tracking workouts, nutrition, and health metrics.</p>
+                            <div class="project-meta">
+                                <span class="project-author"><i class="fas fa-user me-1"></i> Diya Maheshwari</span>
+                                <div class="project-tags">
+                                    <span class="badge bg-primary">Mobile</span>
+                                    <span class="badge bg-secondary">Health</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="ai" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card project-card">
+                        <div class="project-image">
+                            <img src="sentiment.avif" class="card-img-top" alt="Project Image">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-light btn-sm view-project" data-id="3"><i class="fas fa-eye me-1"></i> View</a>
+                                <a href="https://github.com/himani-bhatt/sentiment-analyzer" target="_blank" class="btn btn-light btn-sm"><i class="fab fa-github me-1"></i> GitHub</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Sentiment Analysis Tool</h5>
+                            <p class="card-text">AI-powered tool that analyzes sentiment in text data from various sources.</p>
+                            <div class="project-meta">
+                                <span class="project-author"><i class="fas fa-user me-1"></i> Himani Bhatt</span>
+                                <div class="project-tags">
+                                    <span class="badge bg-primary">AI</span>
+                                    <span class="badge bg-secondary">NLP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="blockchain" data-aos="fade-up">
+                    <div class="card project-card">
+                        <div class="project-image">
+                            <img src="decmkt.avif" class="card-img-top" alt="Project Image">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-light btn-sm view-project" data-id="4"><i class="fas fa-eye me-1"></i> View</a>
+                                <a href="https://github.com/vaishnavi-rajawat/crypto-wallet" target="_blank" class="btn btn-light btn-sm"><i class="fab fa-github me-1"></i> GitHub</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Decentralized Marketplace</h5>
+                            <p class="card-text">A blockchain-based marketplace for digital assets with smart contracts.</p>
+                            <div class="project-meta">
+                                <span class="project-author"><i class="fas fa-user me-1"></i> Vaishnavi Rajawat</span>
+                                <div class="project-tags">
+                                    <span class="badge bg-primary">Blockchain</span>
+                                    <span class="badge bg-secondary">DApp</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="web" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card project-card">
+                        <div class="project-image">
+                            <img src="codeedit.avif" class="card-img-top" alt="Project Image">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-light btn-sm view-project" data-id="5"><i class="fas fa-eye me-1"></i> View</a>
+                                <a href="https://github.com/yuvraj-singh/code-editor" target="_blank" class="btn btn-light btn-sm"><i class="fab fa-github me-1"></i> GitHub</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Collaborative Code Editor</h5>
+                            <p class="card-text">Real-time collaborative code editor with syntax highlighting and live sharing.</p>
+                            <div class="project-meta">
+                                <span class="project-author"><i class="fas fa-user me-1"></i> Yuvraj Singh</span>
+                                <div class="project-tags">
+                                    <span class="badge bg-primary">Web</span>
+                                    <span class="badge bg-secondary">Collaboration</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="mobile" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card project-card">
+                        <div class="project-image">
+                            <img src="ar.avif" class="card-img-top" alt="Project Image">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-light btn-sm view-project" data-id="6"><i class="fas fa-eye me-1"></i> View</a>
+                                <a href="https://github.com/vaibhav-pandey/ar-navigation" target="_blank" class="btn btn-light btn-sm"><i class="fab fa-github me-1"></i> GitHub</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">AR Navigation App</h5>
+                            <p class="card-text">Augmented reality navigation system for indoor and outdoor environments.</p>
+                            <div class="project-meta">
+                                <span class="project-author"><i class="fas fa-user me-1"></i> Vaibhav Pandey</span>
+                                <div class="project-tags">
+                                    <span class="badge bg-primary">Mobile</span>
+                                    <span class="badge bg-secondary">AR</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="text-center mt-4 mb-5" data-aos="fade-up">
+                <button id="loadMoreBtn" class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-plus-circle me-2"></i>Load More
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Detail Modal -->
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModalLabel">Project Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-8" id="modalProjectImage">
+                            <img src="/api/placeholder/800/600" class="img-fluid rounded" alt="Project Image">
+                        </div>
+                        <div class="col-md-4">
+                            <h3 id="modalProjectTitle"></h3>
+                            <p class="text-muted mb-3"><i class="fas fa-user me-2"></i><span id="modalProjectAuthor"></span></p>
+                            <div class="mb-3" id="modalProjectTags"></div>
+                            <p id="modalProjectDescription"></p>
+                            <div class="d-grid gap-2">
+                                <a id="modalGithubLink" href="#" target="_blank" class="btn btn-dark">
+                                    <i class="fab fa-github me-2"></i>View on GitHub
+                                </a>
+                                <button class="btn btn-success">
+                                    <i class="fas fa-download me-2"></i>Get Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Success!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="success-icon mb-4">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h4>Project Submitted Successfully!</h4>
+                    <p>Your project has been submitted and will be reviewed shortly.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>ALUMNET</h5>
+                    <p>Connecting students, alumni, and projects in one place.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../first/first.html">Home</a></li>
+                        <li><a href="../connect/connect.html">Connect</a></li>
+                        <li><a href="../project/project.html">Projects</a></li>
+                        <li><a href="../placement/placement.html">Placement Guide</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; 2025 ALUMNET. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="btn btn-primary btn-floating">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="project.js"></script>
+</body>
+</html>

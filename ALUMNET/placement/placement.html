@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALUMNET | Placement Guide</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="placement.css">
+</head>
+<body>
+    <!-- Navbar (As Provided) -->
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler me-2 animate__animated animate__fadeIn" type="button"
+                data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand ms-auto logo-text animate__animated animate__fade" href="../first/first.html">ALUMNET</a>
+            <div class="profile-icon animate__animated animate__fadeIn">
+                <a href="../prof/ppl1.html">
+                    <img src="dp.webp" alt="Profile" class="rounded-circle">
+                </a>
+            </div>
+
+            <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">ALUMNET Menu</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link animate__animated animate__fadeInLeft" aria-current="page"
+                                href="../first/first.html">
+                                <i class="fas fa-home me-2"></i>Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link animate__animated animate__fadeInLeft" href="../connect/connect.html">
+                                <i class="fas fa-users me-2"></i>Connect
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle animate__animated animate__fadeInLeft active" href="#"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-th-list me-2"></i>Resources
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="../project/project.html">Projects</a></li>
+                                <li><a class="dropdown-item active" href="../placement/placement.html">Placement Guide</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Messages</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex mt-3 search-form" role="search">
+                        <div class="input-group">
+                            <input class="form-control" type="search" id="searchInput" placeholder="Search"
+                                aria-label="Search">
+                            <button class="btn btn-success" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid pt-5 mt-4">
+        <div class="row">
+            <!-- Sidebar Filters -->
+            <div class="col-lg-3 col-md-4 d-none d-md-block sidebar animate__animated animate__fadeInLeft">
+                <div class="sticky-top pt-3">
+                    <div class="card bg-dark text-white mb-4">
+                        <div class="card-header">
+                            <h5><i class="fas fa-filter me-2"></i>Filters</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="companyFilter" class="form-label">Company</label>
+                                <select class="form-select bg-secondary text-white" id="companyFilter">
+                                    <option value="all">All Companies</option>
+                                    <option value="google">Google</option>
+                                    <option value="microsoft">Microsoft</option>
+                                    <option value="amazon">Amazon</option>
+                                    <option value="facebook">Meta</option>
+                                    <option value="apple">Apple</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="roleFilter" class="form-label">Job Role</label>
+                                <select class="form-select bg-secondary text-white" id="roleFilter">
+                                    <option value="all">All Roles</option>
+                                    <option value="sde">Software Developer</option>
+                                    <option value="ds">Data Scientist</option>
+                                    <option value="pm">Product Manager</option>
+                                    <option value="uiux">UI/UX Designer</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="yearFilter" class="form-label">Year</label>
+                                <select class="form-select bg-secondary text-white" id="yearFilter">
+                                    <option value="all">All Years</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2021">2021</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary w-100" id="applyFilters">Apply Filters</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-dark text-white">
+                        <div class="card-header">
+                            <h5><i class="fas fa-lightbulb me-2"></i>Quick Tips</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush tips-list">
+                                <li class="list-group-item bg-dark text-white">Start preparing early</li>
+                                <li class="list-group-item bg-dark text-white">Practice coding daily</li>
+                                <li class="list-group-item bg-dark text-white">Work on projects</li>
+                                <li class="list-group-item bg-dark text-white">Mock interviews help</li>
+                                <li class="list-group-item bg-dark text-white">Network with alumni</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main Content Area -->
+            <div class="col-lg-9 col-md-8 col-12 main-content animate__animated animate__fadeIn">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h1 class="page-title"><i class="fas fa-briefcase me-3"></i>Placement Guide</h1>
+                    <button class="btn btn-outline-primary d-md-none" id="mobileFilterBtn">
+                        <i class="fas fa-filter me-2"></i>Filters
+                    </button>
+                </div>
+                
+                <div class="alert alert-info animate__animated animate__fadeIn">
+                    <i class="fas fa-info-circle me-2"></i>
+                    Insights from alumni who successfully secured positions in top companies. Learn from their experiences!
+                </div>
+                
+                <!-- Search Bar for Mobile -->
+                <div class="d-md-none mb-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search guides...">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Guide Cards -->
+                <div class="row" id="guideContainer">
+                    <!-- Cards will be dynamically loaded here -->
+                </div>
+                
+                <!-- Loading Spinner -->
+                <div class="text-center my-5" id="loadingSpinner">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                
+                <!-- No Results Message (Hidden by default) -->
+                <div class="text-center py-5 d-none" id="noResults">
+                    <i class="fas fa-search fa-3x mb-3 text-muted"></i>
+                    <h4>No guides found</h4>
+                    <p class="text-muted">Try adjusting your filters or search term</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mobile Filter Modal -->
+    <div class="modal fade" id="mobileFilterModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header">
+                    <h5 class="modal-title">Filters</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="mobileCompanyFilter" class="form-label">Company</label>
+                        <select class="form-select bg-secondary text-white" id="mobileCompanyFilter">
+                            <option value="all">All Companies</option>
+                            <option value="google">Google</option>
+                            <option value="microsoft">Microsoft</option>
+                            <option value="amazon">Amazon</option>
+                            <option value="facebook">Meta</option>
+                            <option value="apple">Apple</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mobileRoleFilter" class="form-label">Job Role</label>
+                        <select class="form-select bg-secondary text-white" id="mobileRoleFilter">
+                            <option value="all">All Roles</option>
+                            <option value="sde">Software Developer</option>
+                            <option value="ds">Data Scientist</option>
+                            <option value="pm">Product Manager</option>
+                            <option value="uiux">UI/UX Designer</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mobileYearFilter" class="form-label">Year</label>
+                        <select class="form-select bg-secondary text-white" id="mobileYearFilter">
+                            <option value="all">All Years</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="applyMobileFilters">Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Guide Detail Modal -->
+    <div class="modal fade" id="guideDetailModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="guideModalTitle">Guide Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="guideModalBody">
+                    <!-- Content will be loaded here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">
+                        <i class="fas fa-download me-2"></i>Download PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="placement.js"></script>
+</body>
+</html>

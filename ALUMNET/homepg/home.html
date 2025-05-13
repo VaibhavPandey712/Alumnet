@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALUMNET - Connecting People</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: white;
+        }
+        
+        .landing-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .green-blob-top-left {
+            position: absolute;
+            top: -150px;
+            left: -150px;
+            width: 400px;
+            height: 400px;
+            background-color: #8DC63F;
+            border-radius: 50%;
+            z-index: -1;
+        }
+        
+        .yellow-blob-top-left {
+            position: absolute;
+            top: -100px;
+            left: -50px;
+            width: 300px;
+            height: 300px;
+            background-color: #D9E76C;
+            border-radius: 50%;
+            z-index: -1;
+        }
+        
+        .yellow-blob-bottom-right {
+            position: absolute;
+            bottom: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background-color: #D9E76C;
+            border-radius: 50%;
+            z-index: -1;
+        }
+        
+        .green-blob-bottom-right {
+            position: absolute;
+            bottom: -200px;
+            right: 50px;
+            width: 400px;
+            height: 400px;
+            background-color: #8DC63F;
+            border-radius: 50%;
+            z-index: -1;
+        }
+        
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 0 10%;
+        }
+        
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        
+        .left-section {
+            flex: 1;
+            max-width: 500px;
+        }
+        
+        .people-illustration {
+            width: 100%;
+            position: relative;
+        }
+        
+        .people-illustration img {
+            width: 100%;
+        }
+        
+        .explore-button {
+            background-color: #0088cc;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .explore-button:hover {
+            background-color: #006699;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .right-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+        }
+        
+        .logo {
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+        
+        .tagline {
+            font-size: 48px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-container">
+        <!-- Background blobs -->
+        <div class="green-blob-top-left"></div>
+        <div class="yellow-blob-top-left"></div>
+        <div class="yellow-blob-bottom-right"></div>
+        <div class="green-blob-bottom-right"></div>
+        
+        <div class="content">
+            <div class="main-content">
+                <div class="left-section">
+                    <div class="people-illustration">
+                        <!-- Placeholder for the illustration of people -->
+                        <img src="bg2.gif" alt="People connecting illustration">
+                    </div>
+                </div>
+                
+                <div class="right-section">
+                    <div class="logo">
+                        <!-- ALUMNET logo with connected people -->
+                        <img src="logo1.png" alt="ALUMNET Logo">
+                    </div>
+                    <div class="tagline">Connecting people...!</div>
+                </div>
+            </div>
+            
+            <div class="button-container">
+                <a href="../first/first.html" class="explore-button">Explore now!</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
